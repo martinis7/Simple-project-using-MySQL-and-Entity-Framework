@@ -8,7 +8,6 @@ namespace SqlProject
 {
     public partial class UpdateDriver : Form
     {
-
         public UpdateDriver()
         {
             InitializeComponent();

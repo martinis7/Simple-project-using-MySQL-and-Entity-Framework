@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RouteModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RouteModelStoreContainer">
+    <EntitySet Name="Buses" EntityType="RouteModel.Store.Buses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Routes" EntityType="RouteModel.Store.Routes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BusRoute" Association="RouteModel.Store.BusRoute">
+      <End Role="Bus" EntitySet="Buses" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Buses">
+    <Key>
+      <PropertyRef Name="Bus_Id" />
+    </Key>
+    <Property Name="Bus_Id" Type="int" Nullable="false" />
+    <Property Name="Make" Type="nchar" Nullable="true" MaxLength="20" />
+    <Property Name="Model" Type="nchar" Nullable="true" MaxLength="20" />
+    <Property Name="Capacity" Type="int" Nullable="true" />
+    <Property Name="Route" Type="int" Nullable="true" />
+    <Property Name="Route1_Route_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Routes">
+    <Key>
+      <PropertyRef Name="Route_Id" />
+    </Key>
+    <Property Name="Route_Id" Type="int" Nullable="false" />
+    <Property Name="Start_stop" Type="int" Nullable="true" />
+    <Property Name="End_stop" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="BusRoute">
+    <End Role="Bus" Type="RouteModel.Store.Buses" Multiplicity="*" />
+    <End Role="Route" Type="RouteModel.Store.Routes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="Route_Id" />
+      </Principal>
+      <Dependent Role="Bus">
+        <PropertyRef Name="Route1_Route_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RouteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Public_transport_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Buses" EntityType="RouteModel.Bus" />
+          <EntitySet Name="Routes" EntityType="RouteModel.Route" />
+          <AssociationSet Name="BusRoute" Association="RouteModel.BusRoute">
+            <End Role="Bus" EntitySet="Buses" />
+            <End Role="Route" EntitySet="Routes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bus">
+          <Key>
+            <PropertyRef Name="Bus_Id" />
+          </Key>
+          <Property Name="Bus_Id" Type="Int32" Nullable="false" />
+          <Property Name="Make" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Route" Type="Int32" />
+          <NavigationProperty Name="Route1" Relationship="RouteModel.BusRoute" FromRole="Bus" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="Route_Id" />
+          </Key>
+          <Property Name="Route_Id" Type="Int32" Nullable="false" />
+          <Property Name="Start_stop" Type="Int32" />
+          <Property Name="End_stop" Type="Int32" />
+          <NavigationProperty Name="Buses" Relationship="RouteModel.BusRoute" FromRole="Route" ToRole="Bus" />
+        </EntityType>
+        <Association Name="BusRoute">
+          <End Type="RouteModel.Bus" Role="Bus" Multiplicity="*" />
+          <End Type="RouteModel.Route" Role="Route" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RouteModelStoreContainer" CdmEntityContainer="Public_transport_Entities">
+    <EntitySetMapping Name="Buses">
+      <EntityTypeMapping TypeName="IsTypeOf(RouteModel.Bus)">
+        <MappingFragment StoreEntitySet="Buses">
+          <ScalarProperty Name="Bus_Id" ColumnName="Bus_Id" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="IsTypeOf(RouteModel.Route)">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="Route_Id" ColumnName="Route_Id" />
+          <ScalarProperty Name="Start_stop" ColumnName="Start_stop" />
+          <ScalarProperty Name="End_stop" ColumnName="End_stop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BusRoute" TypeName="RouteModel.BusRoute" StoreEntitySet="Buses">
+      <EndProperty Name="Route">
+        <ScalarProperty Name="Route_Id" ColumnName="Route1_Route_Id" />
+      </EndProperty>
+      <EndProperty Name="Bus">
+        <ScalarProperty Name="Bus_Id" ColumnName="Bus_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

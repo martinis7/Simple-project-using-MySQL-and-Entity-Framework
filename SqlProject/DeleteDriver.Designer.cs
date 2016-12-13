@@ -90,7 +90,7 @@
 
         private System.Windows.Forms.Label DriverIdLabel;
         private System.Windows.Forms.TextBox DriverIdTextBox;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button DeleteButton;
     }
 }

@@ -170,7 +170,7 @@
         private System.Windows.Forms.TextBox LastNametxt;
         private System.Windows.Forms.TextBox PhoneNumbertxt;
         private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.ComboBox DriverIdComboBox;
     }
 }

@@ -90,5 +90,11 @@ namespace SqlProject
            form.ShowDialog();
            UpdateTableAutomatically();
         }
+
+        private void RoutesAndBussesButton_Click(object sender, EventArgs e)
+        {
+            RoutesAndBuses form = new RoutesAndBuses();
+            form.ShowDialog();
+        }
     }
 }

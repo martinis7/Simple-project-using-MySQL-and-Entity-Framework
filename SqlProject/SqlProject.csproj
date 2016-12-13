@@ -48,9 +48,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,11 +73,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bus.cs">
+      <DependentUpon>RoutesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DeleteDriver.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteDriver.Designer.cs">
       <DependentUpon>DeleteDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObservableListSource .cs" />
+    <Compile Include="Route.cs">
+      <DependentUpon>RoutesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesAndBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutesAndBuses.Designer.cs">
+      <DependentUpon>RoutesAndBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoutesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoutesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoutesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="SQLManager.cs">
       <SubType>Form</SubType>
@@ -91,6 +130,9 @@
     <EmbeddedResource Include="DeleteDriver.resx">
       <DependentUpon>DeleteDriver.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RoutesAndBuses.resx">
+      <DependentUpon>RoutesAndBuses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SQLManager.resx">
       <DependentUpon>SQLManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +151,8 @@
     <EmbeddedResource Include="UpdateDriver.resx">
       <DependentUpon>UpdateDriver.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Route.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,6 +162,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="RoutesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RoutesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RoutesModel.edmx.diagram">
+      <DependentUpon>RoutesModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -135,6 +186,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RoutesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoutesModel.edmx</DependentUpon>
+      <LastGenOutput>RoutesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RoutesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoutesModel.edmx</DependentUpon>
+      <LastGenOutput>RoutesModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
