@@ -13,10 +13,10 @@ namespace SqlProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RoutesDBContext : DbContext
+    public partial class DrivingDBContext : DbContext
     {
-        public RoutesDBContext()
-            : base("name=RoutesDBContext")
+        public DrivingDBContext()
+            : base("name=DrivingDBContext")
         {
         }
     
@@ -26,6 +26,6 @@ namespace SqlProject
         }
     
         public virtual DbSet<Bus> Buses { get; set; }
-        public virtual DbSet<Route> Routes { get; set; }
+        public virtual DbSet<Driver> Drivers { get; set; }
     }
 }

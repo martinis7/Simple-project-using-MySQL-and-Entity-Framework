@@ -91,9 +91,9 @@ namespace SqlProject
            UpdateTableAutomatically();
         }
 
-        private void RoutesAndBussesButton_Click(object sender, EventArgs e)
+        private void btnInsertRoute_Click(object sender, EventArgs e)
         {
-            RoutesAndBuses form = new RoutesAndBuses();
+            InsertRoute form = new InsertRoute();
             form.ShowDialog();
         }
     }
