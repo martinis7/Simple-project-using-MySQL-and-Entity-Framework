@@ -96,5 +96,11 @@ namespace SqlProject
             InsertRoute form = new InsertRoute();
             form.ShowDialog();
         }
+
+        private void btnEditBuses_Click(object sender, EventArgs e)
+        {
+            Driving form = new Driving();
+            form.ShowDialog();
+        }
     }
 }

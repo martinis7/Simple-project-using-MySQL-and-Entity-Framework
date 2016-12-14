@@ -14,19 +14,10 @@ namespace SqlProject
     
     public partial class Bus
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bus()
-        {
-            this.Drivers = new HashSet<Driver>();
-        }
-    
         public int Bus_Id { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
         public Nullable<int> Capacity { get; set; }
         public Nullable<int> Route { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Driver> Drivers { get; set; }
     }
 }

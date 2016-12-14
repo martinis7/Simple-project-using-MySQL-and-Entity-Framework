@@ -15,60 +15,9 @@
           <Property Name="Capacity" Type="int" />
           <Property Name="Route" Type="int" />
         </EntityType>
-        <EntityType Name="Driver">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Firstname" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Lastname" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Phone" Type="nchar" MaxLength="20" />
-        </EntityType>
-        <EntityType Name="Driving">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Bus Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Bus Id" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Driving_Bus">
-          <End Role="Bus" Type="Self.Bus" Multiplicity="1" />
-          <End Role="Driving" Type="Self.Driving" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bus">
-              <PropertyRef Name="Bus Id" />
-            </Principal>
-            <Dependent Role="Driving">
-              <PropertyRef Name="Bus Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Driving_Driver">
-          <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
-          <End Role="Driving" Type="Self.Driving" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Driver">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Driving">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Bus" EntityType="Self.Bus" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Driving" EntityType="Self.Driving" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Driving_Bus" Association="Self.FK_Driving_Bus">
-            <End Role="Bus" EntitySet="Bus" />
-            <End Role="Driving" EntitySet="Driving" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Driving_Driver" Association="Self.FK_Driving_Driver">
-            <End Role="Driver" EntitySet="Driver" />
-            <End Role="Driving" EntitySet="Driving" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
@@ -83,29 +32,9 @@
           <Property Name="Model" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Capacity" Type="Int32" />
           <Property Name="Route" Type="Int32" />
-          <NavigationProperty Name="Drivers" Relationship="Self.Driving" FromRole="Bus" ToRole="Driver" />
         </EntityType>
-        <EntityType Name="Driver">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Firstname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Lastname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Buses" Relationship="Self.Driving" FromRole="Driver" ToRole="Bus" />
-        </EntityType>
-        <Association Name="Driving">
-          <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
-          <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="DrivingDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Buses" EntityType="Self.Bus" />
-          <EntitySet Name="Drivers" EntityType="Self.Driver" />
-          <AssociationSet Name="Driving" Association="Self.Driving">
-            <End Role="Bus" EntitySet="Buses" />
-            <End Role="Driver" EntitySet="Drivers" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -124,25 +53,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Drivers">
-            <EntityTypeMapping TypeName="Model.Driver">
-              <MappingFragment StoreEntitySet="Driver">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
-                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="Driving" TypeName="Model.Driving" StoreEntitySet="Driving">
-            <EndProperty Name="Bus">
-              <ScalarProperty Name="Bus_Id" ColumnName="Bus Id" />
-            </EndProperty>
-            <EndProperty Name="Driver">
-              <ScalarProperty Name="Id" ColumnName="Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

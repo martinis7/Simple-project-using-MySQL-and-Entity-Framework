@@ -34,6 +34,7 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.btnInsertRoute = new System.Windows.Forms.Button();
+            this.btnEditBuses = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +98,22 @@
             this.btnInsertRoute.UseVisualStyleBackColor = true;
             this.btnInsertRoute.Click += new System.EventHandler(this.btnInsertRoute_Click);
             // 
+            // btnEditBuses
+            // 
+            this.btnEditBuses.Location = new System.Drawing.Point(588, 10);
+            this.btnEditBuses.Name = "btnEditBuses";
+            this.btnEditBuses.Size = new System.Drawing.Size(75, 23);
+            this.btnEditBuses.TabIndex = 7;
+            this.btnEditBuses.Text = "Edit Buses";
+            this.btnEditBuses.UseVisualStyleBackColor = true;
+            this.btnEditBuses.Click += new System.EventHandler(this.btnEditBuses_Click);
+            // 
             // SqlManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 281);
+            this.Controls.Add(this.btnEditBuses);
             this.Controls.Add(this.btnInsertRoute);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button btnInsertRoute;
+        private System.Windows.Forms.Button btnEditBuses;
     }
 }
 

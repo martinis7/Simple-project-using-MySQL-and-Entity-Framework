@@ -26,6 +26,5 @@ namespace SqlProject
         }
     
         public virtual DbSet<Bus> Buses { get; set; }
-        public virtual DbSet<Driver> Drivers { get; set; }
     }
 }
