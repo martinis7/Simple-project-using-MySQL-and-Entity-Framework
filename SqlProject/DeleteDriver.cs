@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace SqlProject
@@ -13,35 +12,44 @@ namespace SqlProject
             InitializeComponent();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            int driverId;
-            bool parseCondition = true;
-
-            if (!int.TryParse(DriverIdTextBox.Text, out driverId))
-            {
-                DriverIdTextBox.BackColor = Color.Red;
-                parseCondition = false;
-            }
-
-            if (parseCondition)
-            {
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PublicTransportCS"].ConnectionString))
                 {
                     SqlCommand cmd = new SqlCommand();
-                    cmd.Parameters.AddWithValue("@DriverId", driverId);
+                    if (comboBoxDriverId.SelectedItem != null) 
+                    {
+                    cmd.Parameters.AddWithValue("@DriverId", comboBoxDriverId.SelectedItem);
                     cmd.Connection = con;
                     cmd.CommandText = "DELETE FROM Driver WHERE Id = @DriverId";
                     con.Open();
                     cmd.ExecuteNonQuery();
+                    }
                 }
                 Close();
+        }
+
+        private void DeleteDriver_Load(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PublicTransportCS"].ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT Id FROM Driver", con))
+                {
+                    con.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            comboBoxDriverId.Items.Add(reader["Id"]);
+                        }
+                    }
+                }
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

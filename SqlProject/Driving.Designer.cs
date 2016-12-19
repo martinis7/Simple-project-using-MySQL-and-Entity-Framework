@@ -30,86 +30,73 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Driving));
-            this.busBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.busBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.busDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingNavigator)).BeginInit();
-            this.busBindingNavigator.SuspendLayout();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.busBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.busBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.busDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingNavigator)).BeginInit();
+            this.busBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // busBindingNavigator
+            // busDataGridView
             // 
-            this.busBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.busBindingNavigator.BindingSource = this.busBindingSource;
-            this.busBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.busBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.busBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.busBindingNavigatorSaveItem});
-            this.busBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.busBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.busBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.busBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.busBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.busBindingNavigator.Name = "busBindingNavigator";
-            this.busBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.busBindingNavigator.Size = new System.Drawing.Size(578, 25);
-            this.busBindingNavigator.TabIndex = 0;
-            this.busBindingNavigator.Text = "bindingNavigator1";
+            this.busDataGridView.AllowUserToAddRows = false;
+            this.busDataGridView.AutoGenerateColumns = false;
+            this.busDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.busDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.busDataGridView.DataSource = this.busBindingSource;
+            this.busDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.busDataGridView.Name = "busDataGridView";
+            this.busDataGridView.Size = new System.Drawing.Size(564, 313);
+            this.busDataGridView.TabIndex = 1;
             // 
-            // bindingNavigatorAddNewItem
+            // dataGridViewTextBoxColumn7
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Make";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Make";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // bindingNavigatorCountItem
+            // dataGridViewTextBoxColumn8
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Model";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // bindingNavigatorDeleteItem
+            // dataGridViewTextBoxColumn9
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Capacity";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Capacity";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Route";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Route";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // busBindingSource
+            // 
+            this.busBindingSource.DataSource = typeof(SqlProject.Bus);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -143,6 +130,13 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
@@ -171,6 +165,15 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // busBindingNavigatorSaveItem
             // 
             this.busBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -180,55 +183,34 @@
             this.busBindingNavigatorSaveItem.Text = "Save Data";
             this.busBindingNavigatorSaveItem.Click += new System.EventHandler(this.busBindingNavigatorSaveItem_Click);
             // 
-            // busDataGridView
+            // busBindingNavigator
             // 
-            this.busDataGridView.AutoGenerateColumns = false;
-            this.busDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.busDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.busDataGridView.DataSource = this.busBindingSource;
-            this.busDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.busDataGridView.Name = "busDataGridView";
-            this.busDataGridView.Size = new System.Drawing.Size(564, 313);
-            this.busDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Bus_Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Bus_Id";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Make";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Make";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Model";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Capacity";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Capacity";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Route";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Route";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // busBindingSource
-            // 
-            this.busBindingSource.DataSource = typeof(SqlProject.Bus);
+            this.busBindingNavigator.AddNewItem = null;
+            this.busBindingNavigator.BindingSource = this.busBindingSource;
+            this.busBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.busBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.busBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorDeleteItem,
+            this.busBindingNavigatorSaveItem});
+            this.busBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.busBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.busBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.busBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.busBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.busBindingNavigator.Name = "busBindingNavigator";
+            this.busBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.busBindingNavigator.Size = new System.Drawing.Size(578, 25);
+            this.busBindingNavigator.TabIndex = 0;
+            this.busBindingNavigator.Text = "bindingNavigator1";
             // 
             // Driving
             // 
@@ -239,11 +221,11 @@
             this.Controls.Add(this.busBindingNavigator);
             this.Name = "Driving";
             this.Text = "Driving";
+            ((System.ComponentModel.ISupportInitialize)(this.busDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingNavigator)).EndInit();
             this.busBindingNavigator.ResumeLayout(false);
             this.busBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.busDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,24 +233,22 @@
 
         #endregion
         private System.Windows.Forms.BindingSource busBindingSource;
-        private System.Windows.Forms.BindingNavigator busBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton busBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView busDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton busBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingNavigator busBindingNavigator;
     }
 }

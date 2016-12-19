@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.DriverIdLabel = new System.Windows.Forms.Label();
-            this.DriverIdTextBox = new System.Windows.Forms.TextBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.comboBoxDriverId = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // DriverIdLabel
@@ -42,13 +42,6 @@
             this.DriverIdLabel.Size = new System.Drawing.Size(50, 13);
             this.DriverIdLabel.TabIndex = 0;
             this.DriverIdLabel.Text = "Driver Id:";
-            // 
-            // DriverIdTextBox
-            // 
-            this.DriverIdTextBox.Location = new System.Drawing.Point(124, 32);
-            this.DriverIdTextBox.Name = "DriverIdTextBox";
-            this.DriverIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.DriverIdTextBox.TabIndex = 1;
             // 
             // CancelButton
             // 
@@ -70,17 +63,27 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // comboBoxDriverId
+            // 
+            this.comboBoxDriverId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDriverId.FormattingEnabled = true;
+            this.comboBoxDriverId.Location = new System.Drawing.Point(107, 32);
+            this.comboBoxDriverId.Name = "comboBoxDriverId";
+            this.comboBoxDriverId.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDriverId.TabIndex = 4;
+            // 
             // DeleteDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 131);
+            this.Controls.Add(this.comboBoxDriverId);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.DriverIdTextBox);
             this.Controls.Add(this.DriverIdLabel);
             this.Name = "DeleteDriver";
             this.Text = "DeleteDriver";
+            this.Load += new System.EventHandler(this.DeleteDriver_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,8 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Label DriverIdLabel;
-        private System.Windows.Forms.TextBox DriverIdTextBox;
         private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ComboBox comboBoxDriverId;
     }
 }

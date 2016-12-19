@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SqlProject
@@ -27,23 +21,23 @@ namespace SqlProject
 
             _context.Buses.Load();
 
-            this.busBindingSource.DataSource =
+            busBindingSource.DataSource =
                 _context.Buses.Local.ToBindingList();
         }
 
         private void busBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-
-            this._context.SaveChanges();
-
-            this.busDataGridView.Refresh();
+            Validate();
+    
+            _context.SaveChanges();
+            
+            busDataGridView.Refresh();
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-            this._context.Dispose();
+            _context.Dispose();
         }
     }
 }

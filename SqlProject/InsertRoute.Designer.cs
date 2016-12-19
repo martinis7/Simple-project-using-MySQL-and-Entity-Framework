@@ -107,7 +107,7 @@
             // 
             this.checkedListBoxBuses.CheckOnClick = true;
             this.checkedListBoxBuses.FormattingEnabled = true;
-            this.checkedListBoxBuses.Location = new System.Drawing.Point(429, 22);
+            this.checkedListBoxBuses.Location = new System.Drawing.Point(447, 22);
             this.checkedListBoxBuses.Name = "checkedListBoxBuses";
             this.checkedListBoxBuses.Size = new System.Drawing.Size(139, 154);
             this.checkedListBoxBuses.TabIndex = 7;
@@ -124,7 +124,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(491, 216);
+            this.btnInsert.Location = new System.Drawing.Point(507, 216);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(79, 33);
             this.btnInsert.TabIndex = 9;
@@ -144,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(472, 6);
+            this.label2.Location = new System.Drawing.Point(499, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 11;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 261);
+            this.ClientSize = new System.Drawing.Size(602, 261);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInsert);

@@ -76,6 +76,7 @@
     <Compile Include="Bus.cs">
       <DependentUpon>DrivingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CurrentStop.cs" />
     <Compile Include="DeleteDriver.cs">
       <SubType>Form</SubType>
     </Compile>
